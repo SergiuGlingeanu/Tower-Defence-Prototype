@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Playr_Scripts : MonoBehaviour
 {
-    // Start is called before the first frame update
+
+    private Rigidbody2D _rb;
+
+    public float playerSpeed;
+
     void Start()
     {
-        
+        _rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        _rb.velocity = new Vector2(Input.GetAxis("Horizontal") * playerSpeed, Input.GetAxis("Vertical") * playerSpeed);
     }
 }

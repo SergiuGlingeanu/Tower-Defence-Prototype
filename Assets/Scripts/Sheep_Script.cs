@@ -29,6 +29,7 @@ public class Sheep_Script : MonoBehaviour
     {
         if (Vector2.Distance(transform.position, _destination) < 0.5)
         {
+            _gotDestination = false;
             GetDestination();
         }
 
@@ -43,6 +44,8 @@ public class Sheep_Script : MonoBehaviour
         {
             _scared = false;
             GetDestination();
+
+            Debug.Log("Far Away");
         }
     }
 
@@ -59,12 +62,8 @@ public class Sheep_Script : MonoBehaviour
             _rb.velocity = _direction.normalized * sheepSpeed;
 
             _gotDestination = true;
-        }
-    }
 
-    private void RunFromPlayer()
-    {
-        _direction = transform.position - _player.position;
-        _rb.velocity = _direction.normalized * sheepSpeed;
+            Debug.Log("Going");
+        }
     }
 }
