@@ -6,12 +6,14 @@ public class Game_Manager : MonoBehaviour
 {
 
     public GameObject goblin;
+
+    public float goblinsPerSecond;
     
     void Start()
     {
         Instantiate(goblin, new Vector3(-1, 0, 0), Quaternion.identity);
 
-        Invoke("SpawnGoblins", 2);
+        Invoke("SpawnGoblins", 1 / goblinsPerSecond);
     }
 
     
@@ -24,6 +26,6 @@ public class Game_Manager : MonoBehaviour
     {
         Instantiate(goblin, new Vector3(-1, 0, 0), Quaternion.identity);
 
-        Invoke("SpawnGoblins", 2);
+        Invoke("SpawnGoblins", 1 / goblinsPerSecond);
     }
 }
