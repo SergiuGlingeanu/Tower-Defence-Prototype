@@ -9,11 +9,18 @@ public class Sheep_Script : MonoBehaviour
     private Vector2 _direction, _position;
 
     private Transform _player;
+    private CircleCollider2D _cc;
 
     private bool _scared, _gotDestination;
 
     public float sheepSpeed;
     public float scareDistance;
+
+    public float range, attackCooldown, damage;
+
+    public GameObject bullet;
+
+    private float x;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +29,9 @@ public class Sheep_Script : MonoBehaviour
 
         _rb = GetComponent<Rigidbody2D>();
         GetDestination();
+
+        _cc = GetComponent<CircleCollider2D>();
+        _cc.radius = range;
     }
 
     // Update is called once per frame
@@ -44,8 +54,6 @@ public class Sheep_Script : MonoBehaviour
         {
             _scared = false;
             GetDestination();
-
-            Debug.Log("Far Away");
         }
     }
 
@@ -62,8 +70,29 @@ public class Sheep_Script : MonoBehaviour
             _rb.velocity = _direction.normalized * sheepSpeed;
 
             _gotDestination = true;
+        }
+    }
 
-            Debug.Log("Going");
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            x += 1 * Time.deltaTime;
+
+            if (x > attackCooldown)
+            {
+                GameObject _bullet;
+
+                _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
+
+                Vector2 _enemy = collision.transform.position;
+                Vector2 _bulletDirection = _enemy - (Vector2)transform.position;
+
+                _bullet.GetComponent<Rigidbody2D>().velocity = _bulletDirection.normalized * 10;
+                _bullet.GetComponent<Bullet_Script>().damage = damage;
+
+                x = 0;
+            }
         }
     }
 }

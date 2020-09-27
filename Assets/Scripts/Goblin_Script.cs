@@ -22,6 +22,9 @@ public class Goblin_Script : MonoBehaviour
     
     void Update()
     {
-        
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
