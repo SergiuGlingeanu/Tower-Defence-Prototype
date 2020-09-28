@@ -16,13 +16,12 @@ public class Sheep_Script : MonoBehaviour
     public float sheepSpeed;
     public float scareDistance;
 
-    public float range, attackCooldown, damage;
+    public float range, attackCooldown, damage, health;
 
     public GameObject bullet;
 
     private float x;
 
-    // Start is called before the first frame update
     void Start()
     {
         _player = GameObject.Find("Player").GetComponent<Transform>();
@@ -34,7 +33,6 @@ public class Sheep_Script : MonoBehaviour
         _cc.radius = range;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Vector2.Distance(transform.position, _destination) < 0.5)
