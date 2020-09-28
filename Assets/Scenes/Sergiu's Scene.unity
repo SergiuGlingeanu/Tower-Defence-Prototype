@@ -224,7 +224,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goblin: {fileID: 193573705336474071, guid: 4bf1a8bbb9247b348ba95940c4471e71, type: 3}
-  goblinsPerSecond: 0
+  goblinsPerSecond: 0.5
 --- !u!4 &1260633859
 Transform:
   m_ObjectHideFlags: 0

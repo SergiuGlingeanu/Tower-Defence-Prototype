@@ -16,7 +16,9 @@ public class Sheep_Script : MonoBehaviour
     public float sheepSpeed;
     public float scareDistance;
 
-    public float range, attackCooldown, damage, health;
+    public float range, attackCooldown, damage;
+    public int health;
+    public Sprite[] healthSprite;
 
     public GameObject bullet;
 
@@ -53,6 +55,14 @@ public class Sheep_Script : MonoBehaviour
             _scared = false;
             GetDestination();
         }
+
+        if (health > 4)
+        {
+            Destroy(this.gameObject);
+        }
+
+        this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
+
     }
 
     private void GetDestination()
@@ -91,6 +101,14 @@ public class Sheep_Script : MonoBehaviour
 
                 x = 0;
             }
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            health++;
         }
     }
 }
