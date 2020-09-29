@@ -9,6 +9,7 @@ public class Goblin_Script : MonoBehaviour
     public float speed = 2;
     public float damage = 2;
     public float attackCooldown = 2;
+    public GameObject bloodSplatter;
 
     private Rigidbody2D _rb;
     
@@ -24,6 +25,12 @@ public class Goblin_Script : MonoBehaviour
     {
         if (health <= 0)
         {
+            //Create a blood explosion / splatter effect
+            GameObject splatterEffect = Instantiate(bloodSplatter, transform.position, Quaternion.identity) as GameObject;
+            ParticleSystem parts = splatterEffect.GetComponent<ParticleSystem>();
+            float totalDuration = parts.duration + parts.startLifetime;
+            Destroy(splatterEffect, totalDuration);
+
             Destroy(this.gameObject);
         }
     }
