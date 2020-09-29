@@ -132,7 +132,7 @@ public class Sheep_Script : MonoBehaviour
     {
         if (_playerScript.gems >= _damagePrice)
         {
-            damage += 10;
+            damage += 20;
 
             _playerScript.gems -= _damagePrice;
 

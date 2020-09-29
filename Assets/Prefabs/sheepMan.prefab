@@ -1248,8 +1248,8 @@ MonoBehaviour:
   scareDistance: 3
   damageText: {fileID: 6425438382617569956}
   attackText: {fileID: 2698972063297381310}
-  range: 10
-  attackCooldown: 2
+  range: 20
+  attackCooldown: 1
   damage: 10
   health: 0
   healthSprite:
