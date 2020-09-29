@@ -5,15 +5,17 @@ using UnityEngine;
 public class Game_Manager : MonoBehaviour
 {
 
-    public GameObject goblin;
+    public GameObject goblin, gem;
 
-    public float goblinsPerSecond;
+    public float goblinsPerSecond, gemCooldown;
     
     void Start()
     {
-        Instantiate(goblin, new Vector3(-1, 0, 0), Quaternion.identity);
+        Instantiate(goblin, new Vector3(-15.5f, 10.5f, 0), Quaternion.identity);
 
         Invoke("SpawnGoblins", 1 / goblinsPerSecond);
+
+        Invoke("SpawnGem", gemCooldown);
     }
 
     
@@ -24,8 +26,15 @@ public class Game_Manager : MonoBehaviour
 
     private void SpawnGoblins()
     {
-        Instantiate(goblin, new Vector3(-1, 0, 0), Quaternion.identity);
+        Instantiate(goblin, new Vector3(-15.5f, 10.5f, 0), Quaternion.identity);
 
         Invoke("SpawnGoblins", 1 / goblinsPerSecond);
+    }
+
+    private void SpawnGem()
+    {
+        Instantiate(gem, new Vector3(Random.Range(-19.5f, 14.5f), Random.Range(-10.5f, 10.5f), 0), Quaternion.identity);
+
+        Invoke("SpawnGem", gemCooldown);
     }
 }

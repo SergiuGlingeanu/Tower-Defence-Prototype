@@ -69,7 +69,7 @@ public class Sheep_Script : MonoBehaviour
     {
         if (!_scared && !_gotDestination)
         {
-            _destination = new Vector2(Random.Range(-9, 9), Random.Range(-5, 5));
+            _destination = new Vector2(Random.Range(-19, 14), Random.Range(-14, 10));
 
             _position = new Vector2(transform.position.x, transform.position.y);
 

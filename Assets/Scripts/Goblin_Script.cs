@@ -6,17 +6,15 @@ public class Goblin_Script : MonoBehaviour
 {
 
     public float health = 100;
-    public float speed = 2;
-    public float damage = 2;
-    public float attackCooldown = 2;
+    public float speed ;
+    public float damage;
+    public float attackCooldown;
 
-    private Rigidbody2D _rb;
+    private Vector3 _direction;
     
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
-
-        _rb.velocity = new Vector3(1, 0, 0);
+        _direction = new Vector3(0, -1 * speed * Time.deltaTime, 0);
     }
 
     
@@ -25,6 +23,31 @@ public class Goblin_Script : MonoBehaviour
         if (health <= 0)
         {
             Destroy(this.gameObject);
+        }
+
+        transform.position += _direction;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Turn 1" || collision.gameObject.name == "Turn 3")
+        {
+            _direction = new Vector3(1 * speed * Time.deltaTime, 0, 0);
+        }
+
+        if (collision.gameObject.name == "Turn 2" || collision.gameObject.name == "Turn 6")
+        {
+            _direction = new Vector3(0, 1 * speed * Time.deltaTime, 0);
+        }
+
+        if (collision.gameObject.name == "Turn 4")
+        {
+            _direction = new Vector3(0, -1 * speed * Time.deltaTime, 0);
+        }
+
+        if (collision.gameObject.name == "Turn 5")
+        {
+            _direction = new Vector3(-1 * speed * Time.deltaTime, 0, 0);
         }
     }
 }

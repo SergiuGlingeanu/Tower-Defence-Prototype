@@ -243,7 +243,7 @@ MonoBehaviour:
   scareDistance: 3
   range: 10
   attackCooldown: 2
-  damage: 100
+  damage: 10
   health: 0
   healthSprite:
   - {fileID: 21300000, guid: 0bdb2497c724b964a8f92d6b4f6415d1, type: 3}
