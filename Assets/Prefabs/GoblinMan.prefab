@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5462943925275139922}
   - component: {fileID: 9065515775830783808}
   - component: {fileID: 413349780838907906}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GoblinMan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 2
+  speed: 5
   damage: 2
   attackCooldown: 2
   bloodSplatter: {fileID: 6438012932257752616, guid: c4a3e720aba0e7c449faab0dc09ff535,

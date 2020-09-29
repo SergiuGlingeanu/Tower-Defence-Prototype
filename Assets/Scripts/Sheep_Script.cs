@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Sheep_Script : MonoBehaviour
 {
-    private Rigidbody2D _rb;
     private Vector2 _destination;
     private Vector2 _direction, _position;
 
@@ -28,7 +27,6 @@ public class Sheep_Script : MonoBehaviour
     {
         _player = GameObject.Find("Player").GetComponent<Transform>();
 
-        _rb = GetComponent<Rigidbody2D>();
         GetDestination();
 
         _cc = GetComponent<CircleCollider2D>();
@@ -37,23 +35,24 @@ public class Sheep_Script : MonoBehaviour
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, _destination) < 0.5)
+        if (Vector2.Distance(transform.position, _destination) < 0.5f)
         {
             _gotDestination = false;
             GetDestination();
         }
 
-        if (Vector2.Distance(transform.position, _player.position) < scareDistance)
+        if (Vector2.Distance(transform.position, _player.position) < (float)scareDistance)
         {
             _scared = true;
             _gotDestination = false;
             _direction = transform.position - _player.position;
-            _rb.velocity = _direction.normalized * sheepSpeed;
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position +_direction, sheepSpeed * Time.deltaTime);
         }
-        if (Vector2.Distance(transform.position, _player.position) >= scareDistance)
+        if (Vector2.Distance(transform.position, _player.position) >= (float)scareDistance)
         {
             _scared = false;
             GetDestination();
+            transform.position = Vector2.MoveTowards(transform.position, _destination, sheepSpeed * Time.deltaTime);
         }
 
         if (health > 4)
@@ -69,13 +68,7 @@ public class Sheep_Script : MonoBehaviour
     {
         if (!_scared && !_gotDestination)
         {
-            _destination = new Vector2(Random.Range(-19, 14), Random.Range(-14, 10));
-
-            _position = new Vector2(transform.position.x, transform.position.y);
-
-            _direction = _destination - _position;
-
-            _rb.velocity = _direction.normalized * sheepSpeed;
+            _destination = new Vector2(Random.Range(-19f, 14f), Random.Range(-14f, 10f));
 
             _gotDestination = true;
         }

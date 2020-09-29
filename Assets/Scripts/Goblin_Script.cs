@@ -15,7 +15,7 @@ public class Goblin_Script : MonoBehaviour
     
     void Start()
     {
-        
+        _direction = new Vector3(0, -1 * speed * Time.deltaTime, 0);
     }
 
     
@@ -31,6 +31,8 @@ public class Goblin_Script : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+
+        transform.position += _direction;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
