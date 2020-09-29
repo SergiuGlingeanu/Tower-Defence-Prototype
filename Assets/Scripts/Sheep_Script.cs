@@ -87,6 +87,9 @@ public class Sheep_Script : MonoBehaviour
 
                 _bullet = Instantiate(bullet, transform.position, Quaternion.identity);
 
+                //Make sound controller play goblin death sounds
+                GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().shotFired = true;
+
                 Vector2 _enemy = collision.transform.position;
                 Vector2 _bulletDirection = _enemy - (Vector2)transform.position;
 

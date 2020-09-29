@@ -7,6 +7,9 @@ public class Sound_Controller_Script : MonoBehaviour
     public AudioSource goblinSplatSource;
     public bool goblinSplatted;
 
+    public AudioSource shotFiredSource;
+    public bool shotFired;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,12 @@ public class Sound_Controller_Script : MonoBehaviour
         {
             goblinSplatSource.Play();
             goblinSplatted = false;
+        }
+
+        if (shotFired)
+        {
+            shotFiredSource.Play();
+            shotFired = false;
         }
     }
 }
