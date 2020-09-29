@@ -23,6 +23,7 @@ public class Goblin_Script : MonoBehaviour
         _rb.velocity = new Vector3(1, 0, 0);
 
         showDamageTimer = 0;
+
     }
 
     
@@ -37,6 +38,9 @@ public class Goblin_Script : MonoBehaviour
             ParticleSystem parts = splatterEffect.GetComponent<ParticleSystem>();
             float totalDuration = parts.duration + parts.startLifetime;
             Destroy(splatterEffect, totalDuration);
+
+            //Make sound controller play goblin death sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().goblinSplatted = true;
 
             Destroy(this.gameObject);
         }
