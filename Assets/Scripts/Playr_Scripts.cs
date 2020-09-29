@@ -21,6 +21,8 @@ public class Playr_Scripts : MonoBehaviour
     void Update()
     {
         _rb.velocity = new Vector2(Input.GetAxis("Horizontal") * playerSpeed, Input.GetAxis("Vertical") * playerSpeed);
+
+        gemText.text = gems.ToString();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,8 +31,6 @@ public class Playr_Scripts : MonoBehaviour
         {
             Destroy(collision.gameObject);
             gems += 10;
-
-            gemText.text = gems.ToString();
         }
     }
 }

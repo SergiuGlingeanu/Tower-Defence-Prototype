@@ -1,19 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Sheep_Script : MonoBehaviour
 {
     private Vector2 _destination;
     private Vector2 _direction, _position;
 
-    private Transform _player;
+    private Transform _upgradeTile, _playerTransform;
+    private GameObject _player;
+    private Playr_Scripts _playerScript;
     private CircleCollider2D _cc;
 
-    private bool _scared, _gotDestination;
+    public GameObject buttons;
+
+    private bool _scared, _gotDestination, upgrading;
 
     public float sheepSpeed;
     public float scareDistance;
+
+    private int _damagePrice = 50, _attackPrice = 50;
+    public Text damageText, attackText;
 
     public float range, attackCooldown, damage;
     public int health;
@@ -25,7 +33,10 @@ public class Sheep_Script : MonoBehaviour
 
     void Start()
     {
-        _player = GameObject.Find("Player").GetComponent<Transform>();
+        _player = GameObject.Find("Player");
+        _playerTransform = _player.GetComponent<Transform>();
+        _playerScript = _player.GetComponent<Playr_Scripts>();
+        _upgradeTile = GameObject.Find("UpgradeTile").GetComponent<Transform>();
 
         GetDestination();
 
@@ -41,14 +52,14 @@ public class Sheep_Script : MonoBehaviour
             GetDestination();
         }
 
-        if (Vector2.Distance(transform.position, _player.position) < (float)scareDistance)
+        if (Vector2.Distance(transform.position, _playerTransform.position) < (float)scareDistance)
         {
             _scared = true;
             _gotDestination = false;
-            _direction = transform.position - _player.position;
+            _direction = transform.position - _playerTransform.position;
             transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position +_direction, sheepSpeed * Time.deltaTime);
         }
-        if (Vector2.Distance(transform.position, _player.position) >= (float)scareDistance)
+        if (Vector2.Distance(transform.position, _playerTransform.position) >= (float)scareDistance)
         {
             _scared = false;
             GetDestination();
@@ -61,6 +72,18 @@ public class Sheep_Script : MonoBehaviour
         }
 
         this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
+
+        if (upgrading)
+        {
+            transform.position = _upgradeTile.position + new Vector3(0, 0, -2);
+        }
+
+        if (Vector2.Distance(transform.position, _upgradeTile.position) < 1f && _scared)
+        {
+            upgrading = true;
+
+            buttons.SetActive(true);
+        }
 
     }
 
@@ -103,5 +126,39 @@ public class Sheep_Script : MonoBehaviour
         {
             health++;
         }
+    }
+
+    public void MoreDamage()
+    {
+        if (_playerScript.gems >= _damagePrice)
+        {
+            damage += 10;
+
+            _playerScript.gems -= _damagePrice;
+
+            _damagePrice += 50;
+
+            damageText.text = _damagePrice.ToString();
+        }
+    }
+
+    public void AttackSpeed()
+    {
+        if (_playerScript.gems >= _attackPrice)
+        {
+            attackCooldown -= 0.2f;
+
+            _playerScript.gems -= _attackPrice;
+
+            _attackPrice += 50;
+
+            attackText.text = _attackPrice.ToString();
+
+        }
+    }
+
+    public void StopUpgrading()
+    {
+        upgrading = false;
     }
 }
