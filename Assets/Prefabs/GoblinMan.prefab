@@ -147,3 +147,6 @@ MonoBehaviour:
   attackCooldown: 2
   bloodSplatter: {fileID: 6438012932257752616, guid: c4a3e720aba0e7c449faab0dc09ff535,
     type: 3}
+  showDamageTimer: 0
+  fullHealthGoblin: {fileID: 21300000, guid: 06ce695112188e64b961712e76ca9b04, type: 3}
+  damagedGoblin: {fileID: 21300000, guid: e25a28d095b89804e853b2ee13036fcf, type: 3}

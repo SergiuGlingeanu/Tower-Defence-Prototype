@@ -19,6 +19,8 @@ public class Sheep_Script : MonoBehaviour
     public float range, attackCooldown, damage;
 
     public GameObject bullet;
+    
+
 
     private float x;
 

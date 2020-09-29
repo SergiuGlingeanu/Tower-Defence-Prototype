@@ -11,6 +11,7 @@ public class Bullet_Script : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             collision.gameObject.GetComponent<Goblin_Script>().health -= damage;
+            collision.gameObject.GetComponent<Goblin_Script>().showDamageTimer = 1f;
         }
 
         Destroy(this.gameObject);
