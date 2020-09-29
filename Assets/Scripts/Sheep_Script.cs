@@ -69,9 +69,10 @@ public class Sheep_Script : MonoBehaviour
         if (health > 4)
         {
             Destroy(this.gameObject);
+        } else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
         }
-
-        this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
 
         if (upgrading)
         {
