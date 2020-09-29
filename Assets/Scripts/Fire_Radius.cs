@@ -7,9 +7,9 @@ public class Fire_Radius : MonoBehaviour
 {
     [Range(0, 180)] public int segments = 180;
     // segment amount of circle
-    [Range(0, 10)] public float xRadius = 10;
+    [Range(0, 20)] public float xRadius = 20;
     
-    [Range(0, 10)] public float yRadius = 10;
+    [Range(0, 20)] public float yRadius = 20;
     // x and y radius, should remain the same
     [Range(0, 5)] public float lineWidth = 1;
     // width of the circle's line
