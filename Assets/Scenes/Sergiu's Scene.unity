@@ -672,10 +672,10 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 419991254}
   - {fileID: 1034064398}
   - {fileID: 1290052012}
   - {fileID: 2111353937}
+  - {fileID: 419991254}
   - {fileID: 711174316}
   - {fileID: 571542329}
   m_Father: {fileID: 0}
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1020,26 +1020,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: scareDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -1074,6 +1054,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: scareDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
@@ -1164,26 +1164,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: scareDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -1218,6 +1198,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: scareDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
@@ -1404,26 +1404,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan (4)
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: scareDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -1458,6 +1438,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: scareDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
@@ -9229,26 +9229,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan (5)
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: scareDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -9283,6 +9263,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: scareDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
@@ -9587,26 +9587,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: scareDistance
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -9642,26 +9622,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
---- !u!4 &2111353937 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
-    type: 3}
-  m_PrefabInstance: {fileID: 647117202}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7420483458182015325
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 384036163}
-    m_Modifications:
-    - target: {fileID: 7420483458865163167, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: m_Name
-      value: sheepMan
-      objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: sheepRange
@@ -9681,6 +9641,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 7
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
+--- !u!4 &2111353937 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
+    type: 3}
+  m_PrefabInstance: {fileID: 647117202}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7420483458182015325
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 384036163}
+    m_Modifications:
+    - target: {fileID: 7420483458865163167, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Name
+      value: sheepMan
       objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
@@ -9711,6 +9691,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: scareDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163166, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
