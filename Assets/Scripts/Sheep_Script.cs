@@ -69,9 +69,10 @@ public class Sheep_Script : MonoBehaviour
         if (health > 4)
         {
             Destroy(this.gameObject);
+        } else
+        {
+            this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
         }
-
-        this.GetComponent<SpriteRenderer>().sprite = healthSprite[health];
 
         if (upgrading)
         {
@@ -132,7 +133,7 @@ public class Sheep_Script : MonoBehaviour
     {
         if (_playerScript.gems >= _damagePrice)
         {
-            damage += 10;
+            damage += 20;
 
             _playerScript.gems -= _damagePrice;
 

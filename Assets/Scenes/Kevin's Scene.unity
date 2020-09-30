@@ -1374,6 +1374,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: sheepMan
       objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: sheepRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7796721473665731531, guid: 500f9e1f68514a34b974747bfcf6d079,
+        type: 3}
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1429,16 +1440,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: sheepRange
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
-        type: 3}
-      propertyPath: bullet
-      value: 
-      objectReference: {fileID: 7796721473665731531, guid: 500f9e1f68514a34b974747bfcf6d079,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc85328169ed7924ab6c0f1cfcc89719, type: 3}
