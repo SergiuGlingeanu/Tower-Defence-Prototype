@@ -18,6 +18,8 @@ public class Playr_Scripts : MonoBehaviour
     public int gems;
     public Text gemsText;
 
+    public AudioSource gemAudio;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -73,6 +75,7 @@ public class Playr_Scripts : MonoBehaviour
     {
         if (collision.gameObject.tag == "Gems")
         {
+            gemAudio.Play();
             gems += 10;
 
             Destroy(collision.gameObject);

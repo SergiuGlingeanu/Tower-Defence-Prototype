@@ -160,6 +160,9 @@ public class Sheep_Script : MonoBehaviour
     {
         if (_playerScript.gems >= _damagePrice)
         {
+            //Make sound controller play upgrade sheep sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().sheepUpgraded = true;
+
             damage += 20;
 
             _playerScript.gems -= _damagePrice;
@@ -174,6 +177,9 @@ public class Sheep_Script : MonoBehaviour
     {
         if (_playerScript.gems >= _attackPrice)
         {
+            //Make sound controller play upgrade sheep sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().sheepUpgraded = true;
+
             attackCooldown -= 0.2f;
 
             _playerScript.gems -= _attackPrice;
@@ -189,6 +195,9 @@ public class Sheep_Script : MonoBehaviour
     {
         if (_playerScript.gems >= healPrice)
         {
+            //Make sound controller play upgrade sheep sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().sheepUpgraded = true;
+
             health = 0;
 
             _playerScript.gems -= healPrice;
