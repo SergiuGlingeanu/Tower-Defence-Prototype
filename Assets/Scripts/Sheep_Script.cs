@@ -73,11 +73,15 @@ public class Sheep_Script : MonoBehaviour
 
         if (health > 4)
         {
+            //Make sound controller play dying sheep sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().sheepKilled = true;
+
             //Create a blood explosion / splatter effect
             GameObject splatterEffect = Instantiate(bloodSplatter, transform.position, Quaternion.identity) as GameObject;
             ParticleSystem parts = splatterEffect.GetComponent<ParticleSystem>();
             float totalDuration = parts.duration + parts.startLifetime;
             Destroy(splatterEffect, totalDuration);
+
 
             Destroy(this.gameObject);
         } else
@@ -153,6 +157,8 @@ public class Sheep_Script : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             health++;
+            //Make sound controller play sheep hurt sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().sheepHurt = true;
         }
     }
 

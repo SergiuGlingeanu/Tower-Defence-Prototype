@@ -7,8 +7,8 @@ public class Sound_Controller_Script : MonoBehaviour
     public AudioSource goblinSplatSource;
     public bool goblinSplatted;
 
-    public AudioSource shotFiredSource, sheepUpgradeSource;
-    public bool shotFired, sheepUpgraded;
+    public AudioSource shotFiredSource, sheepUpgradeSource, sheepHurtSource, sheepKilledSource;
+    public bool shotFired, sheepUpgraded, sheepHurt, sheepKilled;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +35,18 @@ public class Sound_Controller_Script : MonoBehaviour
         {
             sheepUpgradeSource.Play();
             sheepUpgraded = false;
+        }
+
+        if (sheepHurt)
+        {
+            sheepHurtSource.Play();
+            sheepHurt = false;
+        }
+
+        if (sheepKilled)
+        {
+            sheepKilledSource.Play();
+            sheepKilled = false;
         }
     }
 }

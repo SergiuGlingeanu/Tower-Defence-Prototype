@@ -1440,6 +1440,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2580434242897458227, guid: bf02f16b16703c44b9d8cc91dbdf2e81,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691934390774734675, guid: bf02f16b16703c44b9d8cc91dbdf2e81,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf02f16b16703c44b9d8cc91dbdf2e81, type: 3}
 --- !u!4 &1034064398 stripped
