@@ -28,7 +28,10 @@ public class Sheep_Script : MonoBehaviour
     public Sprite[] healthSprite;
 
     public GameObject bullet;
-    
+
+    public GameObject bloodSplatter;
+    public float showDamageTimer;
+
 
 
     private float x;
@@ -70,6 +73,12 @@ public class Sheep_Script : MonoBehaviour
 
         if (health > 4)
         {
+            //Create a blood explosion / splatter effect
+            GameObject splatterEffect = Instantiate(bloodSplatter, transform.position, Quaternion.identity) as GameObject;
+            ParticleSystem parts = splatterEffect.GetComponent<ParticleSystem>();
+            float totalDuration = parts.duration + parts.startLifetime;
+            Destroy(splatterEffect, totalDuration);
+
             Destroy(this.gameObject);
         } else
         {

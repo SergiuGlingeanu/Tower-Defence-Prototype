@@ -1550,6 +1550,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 4330831f541d28343acf1e13dc67c010, type: 3}
   - {fileID: 21300000, guid: d8e4cc7bd73dc5e46bc928c326c8c45a, type: 3}
   bullet: {fileID: 7796721473665731531, guid: 500f9e1f68514a34b974747bfcf6d079, type: 3}
+  bloodSplatter: {fileID: 4374007999778531170, guid: 9859246736b83d84db357ef20059bef9,
+    type: 3}
+  showDamageTimer: 0
 --- !u!61 &7420483458865163161
 BoxCollider2D:
   m_ObjectHideFlags: 0
