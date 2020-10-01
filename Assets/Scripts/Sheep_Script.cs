@@ -13,15 +13,15 @@ public class Sheep_Script : MonoBehaviour
     private Playr_Scripts _playerScript;
     private CircleCollider2D _cc;
 
-    public GameObject buttons;
+    public GameObject buttons, healButton;
 
     private bool _scared, _gotDestination, upgrading;
 
     public float sheepSpeed;
     public float scareDistance;
 
-    private int _damagePrice = 50, _attackPrice = 50;
-    public Text damageText, attackText;
+    private int _damagePrice = 50, _attackPrice = 50, healPrice;
+    public Text damageText, attackText, healText;
 
     public float range, attackCooldown, damage;
     public int health;
@@ -86,6 +86,19 @@ public class Sheep_Script : MonoBehaviour
             upgrading = true;
 
             buttons.SetActive(true);
+
+            if (health > 0)
+            {
+                healButton.SetActive(true);
+
+                healPrice = health * 20;
+
+                healText.text = healPrice.ToString();
+
+            } else
+            {
+                healButton.SetActive(false);
+            }
         }
 
     }
@@ -160,6 +173,16 @@ public class Sheep_Script : MonoBehaviour
 
             attackText.text = _attackPrice.ToString();
 
+        }
+    }
+
+    public void HealSheep()
+    {
+        if (_playerScript.gems >= healPrice)
+        {
+            health = 0;
+
+            _playerScript.gems -= healPrice;
         }
     }
 
