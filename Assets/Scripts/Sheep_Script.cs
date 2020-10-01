@@ -59,10 +59,20 @@ public class Sheep_Script : MonoBehaviour
 
         if (Vector2.Distance(transform.position, _playerTransform.position) < (float)scareDistance)
         {
+             if (transform.position.x > -19f && transform.position.x < 14f &&
+               transform.position.y > -10f && transform.position.y < 10f)
+           {
             _scared = true;
             _gotDestination = false;
             _direction = transform.position - _playerTransform.position;
-            transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position +_direction, sheepSpeed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + _direction, sheepSpeed * Time.deltaTime);
+            }
+            else { 
+            _scared = false;
+            GetDestination();
+            transform.position = Vector2.MoveTowards(transform.position, _destination, sheepSpeed * Time.deltaTime);
+            }
+
         }
         if (Vector2.Distance(transform.position, _playerTransform.position) >= (float)scareDistance)
         {
