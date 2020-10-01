@@ -19,6 +19,7 @@
       <list>
         <option value="$PROJECT_DIR$/Sheep_Hit.cs" />
         <option value="$PROJECT_DIR$/Base_Hit.cs" />
+        <option value="$PROJECT_DIR$/Start_Game.cs" />
       </list>
     </option>
   </component>
@@ -49,6 +50,7 @@
       <updated>1601292462954</updated>
       <workItem from="1601292478474" duration="5341000" />
       <workItem from="1601388059851" duration="2905000" />
+      <workItem from="1601588344868" duration="1865000" />
     </task>
     <servers />
   </component>
