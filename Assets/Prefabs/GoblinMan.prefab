@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
-  speed: 1
+  speed: 5
   damage: 2
   attackCooldown: 2
   bloodSplatter: {fileID: 6438012932257752616, guid: c4a3e720aba0e7c449faab0dc09ff535,
@@ -128,5 +128,3 @@ MonoBehaviour:
   showDamageTimer: 0
   fullHealthGoblin: {fileID: 21300000, guid: 06ce695112188e64b961712e76ca9b04, type: 3}
   damagedGoblin: {fileID: 21300000, guid: e25a28d095b89804e853b2ee13036fcf, type: 3}
-  soundController: {fileID: 5327701273353580254, guid: bf02f16b16703c44b9d8cc91dbdf2e81,
-    type: 3}

@@ -15,12 +15,11 @@ public class Goblin_Script : MonoBehaviour
     public Sprite fullHealthGoblin, damagedGoblin;
 
     private Rigidbody2D _rb;
+    private Vector2 _direction;
     
     void Start()
     {
-        _rb = GetComponent<Rigidbody2D>();
-
-        _rb.velocity = new Vector3(1, 0, 0);
+        _direction = new Vector2(0, -1);
 
         showDamageTimer = 0;
 
@@ -44,6 +43,8 @@ public class Goblin_Script : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+
+        transform.position += (Vector3)_direction;
     }
 
     void ShowGoblinTakingDamage()
@@ -72,6 +73,29 @@ public class Goblin_Script : MonoBehaviour
             showDamageTimer = 0;
             //Revert goblin colour back to normal
             goblinRenderer.material.SetColor("_Color", Color.white);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.name == "Turn 1" || collision.gameObject.name == "Turn 3")
+        {
+            _direction = new Vector2(1, 0);
+        }
+
+        if (collision.gameObject.name == "Turn 2" || collision.gameObject.name == "Turn 6")
+        {
+            _direction = new Vector2(0, 1);
+        }
+
+        if (collision.gameObject.name == "Turn 4")
+        {
+            _direction = new Vector2(0, -1);
+        }
+
+        if (collision.gameObject.name == "Turn 5")
+        {
+            _direction = new Vector2(-1, 0);
         }
     }
 }

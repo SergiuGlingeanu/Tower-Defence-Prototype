@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Playr_Scripts : MonoBehaviour
 {
@@ -13,6 +14,9 @@ public class Playr_Scripts : MonoBehaviour
     public bool m_Play;
     public bool m_ToggleChange;
     public bool dogIsMoving;
+
+    public int gems;
+    public Text gemsText;
 
     void Start()
     {
@@ -27,6 +31,8 @@ public class Playr_Scripts : MonoBehaviour
         _rb.velocity = new Vector2(Input.GetAxis("Horizontal") * playerSpeed, Input.GetAxis("Vertical") * playerSpeed);
 
         playDogSounds();
+
+        gemsText.text = gems.ToString();
     }
 
     public void playDogSounds()
@@ -60,6 +66,16 @@ public class Playr_Scripts : MonoBehaviour
             dogAudio.Stop();
             //Ensure audio doesn’t play more than once
             m_ToggleChange = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Gems")
+        {
+            gems += 10;
+
+            Destroy(collision.gameObject);
         }
     }
 }

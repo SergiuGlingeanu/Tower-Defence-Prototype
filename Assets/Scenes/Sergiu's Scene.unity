@@ -937,7 +937,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1053,7 +1053,7 @@ PrefabInstance:
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
@@ -1197,7 +1197,7 @@ PrefabInstance:
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
@@ -1491,9 +1491,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goblin: {fileID: 193573705336474071, guid: 4bf1a8bbb9247b348ba95940c4471e71, type: 3}
-  gem: {fileID: 4009587404187615045, guid: eac18d3a8d91b8647a277021fb264015, type: 3}
-  goblinsPerSecond: 0.2
-  gemCooldown: 3
+  gem: {fileID: 0}
+  goblinsPerSecond: 0
+  gemCooldown: 0
 --- !u!4 &1260633859
 Transform:
   m_ObjectHideFlags: 0
@@ -9374,9 +9374,9 @@ GameObject:
   - component: {fileID: 2037172826}
   - component: {fileID: 2037172825}
   - component: {fileID: 2037172829}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9504,8 +9504,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerSpeed: 5
+  m_Play: 0
+  m_ToggleChange: 0
+  dogIsMoving: 0
   gems: 100
-  gemText: {fileID: 231309419}
+  gemsText: {fileID: 231309419}
 --- !u!1 &2048226573
 GameObject:
   m_ObjectHideFlags: 0
@@ -9620,7 +9623,7 @@ PrefabInstance:
     - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
@@ -9691,6 +9694,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7420483458865163162, guid: fc85328169ed7924ab6c0f1cfcc89719,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7420483458865163160, guid: fc85328169ed7924ab6c0f1cfcc89719,
         type: 3}
