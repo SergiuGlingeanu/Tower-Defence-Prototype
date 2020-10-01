@@ -59,6 +59,9 @@ public class Base_Hit : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            //Make sound controller play base damage sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().baseDamaged = true;
+
             baseHealth -= damageAm;
 
             Destroy(collision.gameObject);
