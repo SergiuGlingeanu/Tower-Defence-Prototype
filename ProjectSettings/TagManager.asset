@@ -7,7 +7,7 @@ TagManager:
   - Enemy
   - Sheep
   - Base
-  - Gems
+  - SoundController
   layers:
   - Default
   - TransparentFX
@@ -19,10 +19,10 @@ TagManager:
   - 
   - Bullet
   - Sheep
-  - Gem
-  - Player
-  - Base
-  - Enemy
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 

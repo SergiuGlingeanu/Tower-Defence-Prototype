@@ -9,18 +9,28 @@ public class Goblin_Script : MonoBehaviour
     public float speed = 2;
     public float damage = 2;
     public float attackCooldown = 2;
-    public GameObject bloodSplatter;
 
-    private Vector3 _direction;
+    public GameObject bloodSplatter;
+    public float showDamageTimer;
+    public Sprite fullHealthGoblin, damagedGoblin;
+
+    private Rigidbody2D _rb;
     
     void Start()
     {
-        _direction = new Vector3(0, -1 * speed * Time.deltaTime, 0);
+        _rb = GetComponent<Rigidbody2D>();
+
+        _rb.velocity = new Vector3(1, 0, 0);
+
+        showDamageTimer = 0;
+
     }
 
     
     void Update()
     {
+        ShowGoblinTakingDamage();
+
         if (health <= 0)
         {
             //Create a blood explosion / splatter effect
@@ -29,32 +39,39 @@ public class Goblin_Script : MonoBehaviour
             float totalDuration = parts.duration + parts.startLifetime;
             Destroy(splatterEffect, totalDuration);
 
+            //Make sound controller play goblin death sounds
+            GameObject.FindGameObjectWithTag("SoundController").GetComponent<Sound_Controller_Script>().goblinSplatted = true;
+
             Destroy(this.gameObject);
         }
-
-        transform.position += _direction;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void ShowGoblinTakingDamage()
     {
-        if (collision.gameObject.name == "Turn 1" || collision.gameObject.name == "Turn 3")
+        var goblinRenderer = GetComponent<SpriteRenderer>();
+
+        if (health > 50)
         {
-            _direction = new Vector3(1 * speed * Time.deltaTime, 0, 0);
+            goblinRenderer.sprite = fullHealthGoblin;
+        }
+        else
+        {
+            goblinRenderer.sprite = damagedGoblin;
         }
 
-        if (collision.gameObject.name == "Turn 2" || collision.gameObject.name == "Turn 6")
+        if (showDamageTimer > 0)
         {
-            _direction = new Vector3(0, 1 * speed * Time.deltaTime, 0);
+            //Make the goblin red
+            goblinRenderer.material.SetColor("_Color", Color.red);
+
+            showDamageTimer -= 0.1f;
         }
 
-        if (collision.gameObject.name == "Turn 4")
+        else
         {
-            _direction = new Vector3(0, -1 * speed * Time.deltaTime, 0);
-        }
-
-        if (collision.gameObject.name == "Turn 5")
-        {
-            _direction = new Vector3(-1 * speed * Time.deltaTime, 0, 0);
+            showDamageTimer = 0;
+            //Revert goblin colour back to normal
+            goblinRenderer.material.SetColor("_Color", Color.white);
         }
     }
 }
