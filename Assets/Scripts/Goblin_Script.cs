@@ -44,7 +44,7 @@ public class Goblin_Script : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        transform.position += (Vector3)_direction;
+        transform.position += (Vector3)_direction * Time.deltaTime * speed;
     }
 
     void ShowGoblinTakingDamage()
