@@ -6,6 +6,7 @@ public class Goblin_Script : MonoBehaviour
 {
 
     public float health = 100;
+    private float halfHealth;
     public float speed = 2;
     public float damage = 2;
     public float attackCooldown = 2;
@@ -22,6 +23,8 @@ public class Goblin_Script : MonoBehaviour
         _direction = new Vector2(0, -1);
 
         showDamageTimer = 0;
+
+        halfHealth = health / 2;
 
     }
 
@@ -51,7 +54,7 @@ public class Goblin_Script : MonoBehaviour
     {
         var goblinRenderer = GetComponent<SpriteRenderer>();
 
-        if (health > 50)
+        if (health > halfHealth)
         {
             goblinRenderer.sprite = fullHealthGoblin;
         }
