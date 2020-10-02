@@ -6,15 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class Start_Game : MonoBehaviour
 {
-    public Button start;
-
-    public GameObject startButton;
-
-    void Start()
-    {
-        
-        start.OnClick.AddListener(startGame);
-    }
+   
 
     public void startGame()
     {
